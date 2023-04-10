@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <item
+            android:id="@+id/navigation_home"
+            android:icon="@drawable/ic_home"
+            android:title="@string/home" />
+        <item
+            android:id="@+id/navigation_compass"
+            android:icon="@drawable/ic_compass"
+            android:title="@string/compass" />
+        <item
+            android:id="@+id/navigation_fairy_goggles"
+            android:icon="@drawable/ic_goggles"
+            android:title="@string/fairy_goggles" />
+        <item
+            android:id="@+id/navigation_cards"
+            android:icon="@drawable/ic_cards"
+            android:title="@string/cards" />
+
+<!--        <item-->
+<!--            android:id="@+id/navigation_more_options"-->
+<!--            android:icon="@drawable/ic_burger_menu"-->
+<!--            android:title="@string/more_options" />-->
+</menu>
