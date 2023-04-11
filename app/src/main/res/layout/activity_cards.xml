@@ -12,8 +12,8 @@
         android:id="@+id/imageView2"
         android:layout_width="92dp"
         android:layout_height="126dp"
-        android:layout_marginBottom="35sp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView11"
+        android:layout_marginBottom="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/thewhale"
         app:layout_constraintEnd_toStartOf="@+id/imageView3"
         app:layout_constraintStart_toEndOf="@+id/imageView"
         app:srcCompat="@drawable/card" />
@@ -23,7 +23,7 @@
         android:layout_width="92dp"
         android:layout_height="126dp"
         android:layout_marginRight="20sp"
-        android:layout_marginBottom="35sp"
+        android:layout_marginBottom="30sp"
         app:layout_constraintBottom_toTopOf="@+id/imageView4"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/card" />
@@ -33,7 +33,7 @@
         android:layout_width="92dp"
         android:layout_height="126dp"
         android:layout_marginEnd="20sp"
-        android:layout_marginBottom="35sp"
+        android:layout_marginBottom="30sp"
         app:layout_constraintBottom_toTopOf="@+id/imageView5"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/card" />
@@ -43,7 +43,7 @@
         android:layout_width="92dp"
         android:layout_height="126dp"
         android:layout_marginRight="20sp"
-        android:layout_marginBottom="35sp"
+        android:layout_marginBottom="30sp"
         app:layout_constraintBottom_toTopOf="@+id/imageView6"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/card" />
@@ -53,7 +53,7 @@
         android:layout_width="92dp"
         android:layout_height="126dp"
         android:layout_marginRight="20sp"
-        android:layout_marginBottom="35sp"
+        android:layout_marginBottom="30sp"
         app:layout_constraintBottom_toTopOf="@+id/navigation"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/card" />
@@ -62,7 +62,7 @@
         android:id="@+id/imageView7"
         android:layout_width="92dp"
         android:layout_height="126dp"
-        android:layout_marginBottom="35sp"
+        android:layout_marginBottom="30sp"
         app:layout_constraintBottom_toTopOf="@+id/navigation"
         app:layout_constraintEnd_toStartOf="@+id/imageView6"
         app:layout_constraintStart_toEndOf="@+id/imageView8"
@@ -73,7 +73,7 @@
         android:layout_width="92dp"
         android:layout_height="126dp"
         android:layout_marginLeft="20sp"
-        android:layout_marginBottom="35sp"
+        android:layout_marginBottom="30sp"
         app:layout_constraintBottom_toTopOf="@+id/navigation"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/card" />
@@ -83,7 +83,7 @@
         android:layout_width="92dp"
         android:layout_height="126dp"
         android:layout_marginLeft="20sp"
-        android:layout_marginBottom="35sp"
+        android:layout_marginBottom="30sp"
         app:layout_constraintBottom_toTopOf="@+id/imageView8"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/card" />
@@ -92,17 +92,17 @@
         android:id="@+id/imageView10"
         android:layout_width="92dp"
         android:layout_height="126dp"
-        android:layout_marginBottom="35sp"
+        android:layout_marginBottom="30sp"
         app:layout_constraintBottom_toTopOf="@+id/imageView7"
         app:layout_constraintEnd_toStartOf="@+id/imageView5"
         app:layout_constraintStart_toEndOf="@+id/imageView9"
         app:srcCompat="@drawable/card" />
 
     <ImageView
-        android:id="@+id/imageView11"
+        android:id="@+id/thewhale"
         android:layout_width="92dp"
         android:layout_height="126dp"
-        android:layout_marginBottom="35sp"
+        android:layout_marginBottom="30sp"
         app:layout_constraintBottom_toTopOf="@+id/imageView10"
         app:layout_constraintEnd_toStartOf="@+id/imageView4"
         app:layout_constraintStart_toEndOf="@+id/imageView12"
@@ -113,7 +113,7 @@
         android:layout_width="92dp"
         android:layout_height="126dp"
         android:layout_marginLeft="20sp"
-        android:layout_marginBottom="35sp"
+        android:layout_marginBottom="30sp"
         app:layout_constraintBottom_toTopOf="@+id/imageView9"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/card" />
@@ -134,7 +134,7 @@
         android:layout_width="92dp"
         android:layout_height="126dp"
         android:layout_marginLeft="20sp"
-        android:layout_marginBottom="35sp"
+        android:layout_marginBottom="30sp"
         app:layout_constraintBottom_toTopOf="@+id/imageView12"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/card" />
