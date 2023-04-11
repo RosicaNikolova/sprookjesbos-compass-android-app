@@ -4,4 +4,7 @@
     <string name="compass">Compass</string>
     <string name="fairy_goggles">Fairy Goggles</string>
     <string name="cards">Cards</string>
+    <string name="you_are_on_your_way">You are on your way</string>
+    <string name="compass_picture">compass picture</string>
+    <string name="compasspicture">compass</string>
 </resources>
