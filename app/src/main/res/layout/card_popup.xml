@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/close"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentEnd="true"
+        android:layout_gravity="right"
+        android:layout_marginTop="10dp"
+        app:srcCompat="@drawable/close" />
+
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="342dp"
+        android:layout_height="518dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/cardView"
+        app:srcCompat="@drawable/thewhale"
+        android:layout_gravity="center_horizontal"/>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="343dp"
+        android:layout_height="149dp"
+        android:layout_marginTop="20sp"
+        android:text="That's why his father sent him to school. Along the way, the cunning fox and the stupid cat persuaded Pinocchio to join them on all sorts of adventures. Every time he lied to Geppetto about this, his nose grew an inch or two. One bad day Pinocchio didn't come home from school and Geppetto desperately started a search by land and sea... Where is Pinocchio?"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="566dp"
+        android:layout_gravity="center_horizontal"
+        android:textAlignment="center"/>
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>
