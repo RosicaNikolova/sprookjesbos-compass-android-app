@@ -8,135 +8,135 @@
     tools:context=".CardsActivity">
 
 
-<!--    <ImageView-->
-<!--        android:id="@+id/imageView2"-->
-<!--        android:layout_width="92dp"-->
-<!--        android:layout_height="126dp"-->
-<!--        android:layout_marginBottom="30sp"-->
-<!--        app:layout_constraintBottom_toTopOf="@+id/thewhale"-->
-<!--        app:layout_constraintEnd_toStartOf="@+id/imageView3"-->
-<!--        app:layout_constraintStart_toEndOf="@+id/imageView"-->
-<!--        app:srcCompat="@drawable/card" />-->
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="92dp"
+        android:layout_height="126dp"
+        android:layout_marginBottom="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/thewhale"
+        app:layout_constraintEnd_toStartOf="@+id/imageView3"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:srcCompat="@drawable/card" />
 
-<!--    <ImageView-->
-<!--        android:id="@+id/imageView3"-->
-<!--        android:layout_width="92dp"-->
-<!--        android:layout_height="126dp"-->
-<!--        android:layout_marginRight="20sp"-->
-<!--        android:layout_marginBottom="30sp"-->
-<!--        app:layout_constraintBottom_toTopOf="@+id/imageView4"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:srcCompat="@drawable/card" />-->
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="92dp"
+        android:layout_height="126dp"
+        android:layout_marginRight="20sp"
+        android:layout_marginBottom="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/card" />
 
-<!--    <ImageView-->
-<!--        android:id="@+id/imageView4"-->
-<!--        android:layout_width="92dp"-->
-<!--        android:layout_height="126dp"-->
-<!--        android:layout_marginEnd="20sp"-->
-<!--        android:layout_marginBottom="30sp"-->
-<!--        app:layout_constraintBottom_toTopOf="@+id/imageView5"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:srcCompat="@drawable/card" />-->
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="92dp"
+        android:layout_height="126dp"
+        android:layout_marginEnd="20sp"
+        android:layout_marginBottom="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/card" />
 
-<!--    <ImageView-->
-<!--        android:id="@+id/imageView5"-->
-<!--        android:layout_width="92dp"-->
-<!--        android:layout_height="126dp"-->
-<!--        android:layout_marginRight="20sp"-->
-<!--        android:layout_marginBottom="30sp"-->
-<!--        app:layout_constraintBottom_toTopOf="@+id/imageView6"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:srcCompat="@drawable/card" />-->
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="92dp"
+        android:layout_height="126dp"
+        android:layout_marginRight="20sp"
+        android:layout_marginBottom="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/card" />
 
-<!--    <ImageView-->
-<!--        android:id="@+id/imageView6"-->
-<!--        android:layout_width="92dp"-->
-<!--        android:layout_height="126dp"-->
-<!--        android:layout_marginRight="20sp"-->
-<!--        android:layout_marginBottom="30sp"-->
-<!--        app:layout_constraintBottom_toTopOf="@+id/navigation"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:srcCompat="@drawable/card" />-->
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="92dp"
+        android:layout_height="126dp"
+        android:layout_marginRight="20sp"
+        android:layout_marginBottom="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/navigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/card" />
 
-<!--    <ImageView-->
-<!--        android:id="@+id/imageView7"-->
-<!--        android:layout_width="92dp"-->
-<!--        android:layout_height="126dp"-->
-<!--        android:layout_marginBottom="30sp"-->
-<!--        app:layout_constraintBottom_toTopOf="@+id/navigation"-->
-<!--        app:layout_constraintEnd_toStartOf="@+id/imageView6"-->
-<!--        app:layout_constraintStart_toEndOf="@+id/imageView8"-->
-<!--        app:srcCompat="@drawable/card" />-->
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="92dp"
+        android:layout_height="126dp"
+        android:layout_marginBottom="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/navigation"
+        app:layout_constraintEnd_toStartOf="@+id/imageView6"
+        app:layout_constraintStart_toEndOf="@+id/imageView8"
+        app:srcCompat="@drawable/card" />
 
-<!--    <ImageView-->
-<!--        android:id="@+id/imageView8"-->
-<!--        android:layout_width="92dp"-->
-<!--        android:layout_height="126dp"-->
-<!--        android:layout_marginLeft="20sp"-->
-<!--        android:layout_marginBottom="30sp"-->
-<!--        app:layout_constraintBottom_toTopOf="@+id/navigation"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:srcCompat="@drawable/card" />-->
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="92dp"
+        android:layout_height="126dp"
+        android:layout_marginLeft="20sp"
+        android:layout_marginBottom="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/navigation"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/card" />
 
-<!--    <ImageView-->
-<!--        android:id="@+id/imageView9"-->
-<!--        android:layout_width="92dp"-->
-<!--        android:layout_height="126dp"-->
-<!--        android:layout_marginLeft="20sp"-->
-<!--        android:layout_marginBottom="30sp"-->
-<!--        app:layout_constraintBottom_toTopOf="@+id/imageView8"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:srcCompat="@drawable/card" />-->
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="92dp"
+        android:layout_height="126dp"
+        android:layout_marginLeft="20sp"
+        android:layout_marginBottom="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/card" />
 
-<!--    <ImageView-->
-<!--        android:id="@+id/imageView10"-->
-<!--        android:layout_width="92dp"-->
-<!--        android:layout_height="126dp"-->
-<!--        android:layout_marginBottom="30sp"-->
-<!--        app:layout_constraintBottom_toTopOf="@+id/imageView7"-->
-<!--        app:layout_constraintEnd_toStartOf="@+id/imageView5"-->
-<!--        app:layout_constraintStart_toEndOf="@+id/imageView9"-->
-<!--        app:srcCompat="@drawable/card" />-->
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="92dp"
+        android:layout_height="126dp"
+        android:layout_marginBottom="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView7"
+        app:layout_constraintEnd_toStartOf="@+id/imageView5"
+        app:layout_constraintStart_toEndOf="@+id/imageView9"
+        app:srcCompat="@drawable/card" />
 
-<!--    <ImageView-->
-<!--        android:id="@+id/thewhale"-->
-<!--        android:layout_width="92dp"-->
-<!--        android:layout_height="126dp"-->
-<!--        android:layout_marginBottom="30sp"-->
-<!--        app:layout_constraintBottom_toTopOf="@+id/imageView10"-->
-<!--        app:layout_constraintEnd_toStartOf="@+id/imageView4"-->
-<!--        app:layout_constraintStart_toEndOf="@+id/imageView12"-->
-<!--        app:srcCompat="@drawable/thewhale" />-->
+    <ImageView
+        android:id="@+id/thewhale"
+        android:layout_width="92dp"
+        android:layout_height="126dp"
+        android:layout_marginBottom="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView10"
+        app:layout_constraintEnd_toStartOf="@+id/imageView4"
+        app:layout_constraintStart_toEndOf="@+id/imageView12"
+        app:srcCompat="@drawable/thewhale" />
 
-<!--    <ImageView-->
-<!--        android:id="@+id/imageView12"-->
-<!--        android:layout_width="92dp"-->
-<!--        android:layout_height="126dp"-->
-<!--        android:layout_marginLeft="20sp"-->
-<!--        android:layout_marginBottom="30sp"-->
-<!--        app:layout_constraintBottom_toTopOf="@+id/imageView9"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:srcCompat="@drawable/card" />-->
+    <ImageView
+        android:id="@+id/imageView12"
+        android:layout_width="92dp"
+        android:layout_height="126dp"
+        android:layout_marginLeft="20sp"
+        android:layout_marginBottom="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/card" />
 
-<!--    <com.google.android.material.bottomnavigation.BottomNavigationView-->
-<!--        android:id="@+id/navigation"-->
-<!--        android:layout_width="0dp"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:foregroundGravity="bottom"-->
-<!--        app:labelVisibilityMode="labeled"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:menu="@menu/bottom_navigation_menu" />-->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/navigation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:foregroundGravity="bottom"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_navigation_menu" />
 
-<!--    <ImageView-->
-<!--        android:id="@+id/imageView"-->
-<!--        android:layout_width="92dp"-->
-<!--        android:layout_height="126dp"-->
-<!--        android:layout_marginLeft="20sp"-->
-<!--        android:layout_marginBottom="30sp"-->
-<!--        app:layout_constraintBottom_toTopOf="@+id/imageView12"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:srcCompat="@drawable/card" />-->
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="92dp"
+        android:layout_height="126dp"
+        android:layout_marginLeft="20sp"
+        android:layout_marginBottom="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView12"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/card" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
