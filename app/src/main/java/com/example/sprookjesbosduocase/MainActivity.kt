@@ -3,6 +3,7 @@ package com.example.sprookjesbosduocase
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
@@ -36,6 +37,10 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-
+        val startbtn = findViewById<Button>(R.id.startbtn)
+        startbtn.setOnClickListener {
+            val intent = Intent(this, CompassActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
