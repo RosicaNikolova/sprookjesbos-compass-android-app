@@ -31,7 +31,7 @@
         android:contentDescription="@string/compasspicture" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/compassText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:contentDescription="@string/compass_picture"

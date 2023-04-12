@@ -1,38 +1,63 @@
 package com.example.sprookjesbosduocase
 
 import android.Manifest
-import android.content.Context
+import android.app.Dialog
 import android.content.Intent
-import android.content.pm.PackageManager
-import android.graphics.Bitmap
-import android.graphics.BitmapFactory
-import android.graphics.Matrix
-import android.location.Location
-import android.location.LocationListener
-import android.location.LocationManager
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
+import android.hardware.Sensor
+import android.hardware.SensorEvent
+import android.hardware.SensorEventListener
+import android.hardware.SensorManager
 import android.os.Bundle
-import android.provider.MediaStore
-import android.util.Log
+import android.os.CountDownTimer
 import android.view.animation.Animation
 import android.view.animation.RotateAnimation
+import android.widget.Button
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
+import androidx.core.content.ContentProviderCompat.requireContext
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
-class CompassActivity : AppCompatActivity(), LocationListener {
+class CompassActivity : AppCompatActivity(), SensorEventListener {
 
-    private lateinit var locationManager: LocationManager
-    private var currentLocation: Location? = null
-    private val destinationLocation = Location("")
+    // define the display assembly compass picture
+    private lateinit var image: ImageView
 
-    private lateinit var compass: ImageView
-    //private lateinit var picture: ImageView
+    // record the compass picture angle turned
     private var currentDegree = 0f
+
+    // device sensor manager
+    private lateinit var mSensorManager: SensorManager
+
+    private lateinit var tvHeading: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_compass)
+        ActivityCompat.requestPermissions(
+            this,
+            arrayOf(
+                Manifest.permission.ACCESS_COARSE_LOCATION,
+                Manifest.permission.ACCESS_FINE_LOCATION,
+            ),
+            0
+        )
+        //super.onResume()
+
+        // Start the LocationService
+        Intent(applicationContext, LocationService::class.java).apply {
+            action = LocationService.ACTION_START
+            startService(this)
+        }
+
+        // our compass image
+        image = findViewById(R.id.compassImg)
+
+        // initialize your android device sensor capabilities
+        mSensorManager = getSystemService(SENSOR_SERVICE) as SensorManager
 
         //navigation
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.navigation)
@@ -63,94 +88,114 @@ class CompassActivity : AppCompatActivity(), LocationListener {
         }
 
 
+        //Code for card pop up
+        //referance for the code https://youtu.be/ukL6oURCAq4
+        val myDialog = Dialog(this)
 
-        compass = findViewById(R.id.compassImg)
-        //picture = findViewById(R.id.picture)
-
-        // Set the destination location
-        destinationLocation.latitude = 37.421998
-        destinationLocation.longitude = -122.084
-
-        // Get the location manager and request location updates
-        locationManager = getSystemService(Context.LOCATION_SERVICE) as LocationManager
-        if (ActivityCompat.checkSelfPermission(
-                this,
-                Manifest.permission.ACCESS_FINE_LOCATION
-            ) != PackageManager.PERMISSION_GRANTED
-        ) {
-            ActivityCompat.requestPermissions(
-                this,
-                arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),
-                1
-            )
-        } else {
-            locationManager.requestLocationUpdates(
-                LocationManager.GPS_PROVIDER,
-                0,
-                0f,
-                this
-            )
-        }
-    }
-
-    override fun onResume() {
-        super.onResume()
-
-        // Get the rotation animation for the compass
-
-            val rotateAnimation = RotateAnimation(
-                currentDegree,
-                -currentLocation?.bearing!!,
-                Animation.RELATIVE_TO_SELF,
-                0.5f,
-                Animation.RELATIVE_TO_SELF,
-                0.5f
-            ).apply {
-                duration = 250
-                fillAfter = true
+        val timer = object : CountDownTimer(10000, 1000) {
+            override fun onTick(millisUntilFinished: Long) {
+                // no need for code
             }
 
-            compass.startAnimation(rotateAnimation)
-            currentDegree = -currentLocation?.bearing!!
+            override fun onFinish() {
+                val dialogBinding = layoutInflater.inflate(R.layout.compass_dialog, null)
+                myDialog.setContentView(dialogBinding)
+                myDialog.setCancelable(true)
+                myDialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+                myDialog.show()
 
-            // Check if the user has reached the destination location
-            if (currentLocation?.distanceTo(destinationLocation) ?: 0f < 10f) {
-                // Load and display the picture
-                val bitmap: Bitmap = BitmapFactory.decodeResource(resources, R.drawable.compass)
-                compass.setImageBitmap(rotateBitmap(bitmap, -currentDegree))
-                compass.setOnClickListener {
-                    MediaStore.Images.Media.insertImage(
-                        contentResolver,
-                        bitmap,
-                        "Picture",
-                        "Description"
-                    )
-                    val intent = Intent(Intent.ACTION_VIEW)
-                    intent.type = "image/*"
+                val closebtn = dialogBinding.findViewById<ImageView>(R.id.close)
+                closebtn.setOnClickListener{
+                    myDialog.dismiss()
+                }
+
+                val yesbtn = dialogBinding.findViewById<Button>(R.id.yesbtn)
+                yesbtn.setOnClickListener{
+                    val intent = Intent(this@CompassActivity, FairyGogglesActivity::class.java)
+                    startActivity(intent)
+                }
+
+                val btnLater = dialogBinding.findViewById<Button>(R.id.btnLater)
+                btnLater.setOnClickListener{
+                    val intent = Intent(this@CompassActivity, MainActivity::class.java)
                     startActivity(intent)
                 }
             }
         }
 
-    override fun onLocationChanged(location: Location) {
-        currentLocation = location
+        //start the timer
+        timer.start();
     }
 
-    override fun onStatusChanged(provider: String?, status: Int, extras: Bundle?) {
-        Log.d("Location", "Status changed to $status")
+
+    override fun onResume() {
+        super.onResume()
+
+        // for the system's orientation sensor registered listeners
+        mSensorManager.registerListener(
+            this,
+            mSensorManager.getDefaultSensor(Sensor.TYPE_ORIENTATION),
+            SensorManager.SENSOR_DELAY_GAME
+        )
     }
 
-    override fun onProviderEnabled(provider: String) {
-        Log.d("Location", "Provider $provider enabled")
+    override fun onPause() {
+        super.onPause()
+
+        // to stop the listener and save battery
+        mSensorManager.unregisterListener(this)
     }
 
-    override fun onProviderDisabled(provider: String) {
-        Log.d("Location", "Provider $provider disabled")
+
+    override fun onSensorChanged(event: SensorEvent?) {
+        event?.let {
+            // get the angle around the z-axis rotated
+            val degree = Math.round(event.values[0])
+
+            //tvHeading.text = "Heading: $degree degrees"
+
+            // create a rotation animation (reverse turn degree degrees)
+            val ra = RotateAnimation(
+                currentDegree,
+                -degree.toFloat(),
+                Animation.RELATIVE_TO_SELF,
+                0.5f,
+                Animation.RELATIVE_TO_SELF,
+                0.5f
+            )
+
+            // how long the animation will take place
+            ra.duration = 210
+
+            // set the animation after the end of the reservation status
+            ra.fillAfter = true
+
+            // Start the animation
+            image.startAnimation(ra)
+            currentDegree = -degree.toFloat()
+        }
     }
 
-    private fun rotateBitmap(bitmap: Bitmap, degrees: Float): Bitmap {
-        val matrix = Matrix()
-        matrix.postRotate(degrees)
-        return Bitmap.createBitmap(bitmap, 0, 0, bitmap.width, bitmap.height, matrix, true)
+    override fun onAccuracyChanged(sensor: Sensor?, accuracy: Int) {
+        // not in use
     }
+
+//    override fun onResume() {
+//        super.onResume()
+//        // Start the LocationService
+//        Intent(applicationContext, LocationService::class.java).apply {
+//            action = LocationService.ACTION_START
+//            startService(this)
+//        }
+//    }
+//
+//    override fun onPause() {
+//        super.onPause()
+//        // Stop the LocationService
+//        Intent(applicationContext, LocationService::class.java).apply {
+//            action = LocationService.ACTION_STOP
+//            startService(this)
+//        }
+//    }
+
 }
