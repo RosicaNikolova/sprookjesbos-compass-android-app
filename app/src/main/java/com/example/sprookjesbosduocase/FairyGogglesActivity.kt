@@ -1,9 +1,15 @@
 package com.example.sprookjesbosduocase
 
+import android.app.Dialog
 import android.content.Intent
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.CountDownTimer
+import android.widget.Button
+import android.widget.ImageView
 import android.widget.MediaController
 import android.widget.VideoView
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -50,5 +56,34 @@ class FairyGogglesActivity : AppCompatActivity() {
         whalevideo.setVideoURI(offlineUri)
         whalevideo.requestFocus()
         whalevideo.start()
+
+
+        //Code for card pop up
+        //referance for the code https://youtu.be/ukL6oURCAq4
+        val myDialog = Dialog(this)
+
+        val timer = object : CountDownTimer(5000, 1000) {
+            override fun onTick(millisUntilFinished: Long) {
+                // no need for code
+            }
+
+            override fun onFinish() {
+                val dialogBinding = layoutInflater.inflate(R.layout.goggles_popup, null)
+                myDialog.setContentView(dialogBinding)
+                myDialog.setCancelable(true)
+                myDialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+                myDialog.show()
+
+                val collectbtn = dialogBinding.findViewById<Button>(R.id.collectbtn)
+                collectbtn.setOnClickListener{
+                    myDialog.dismiss()
+                }
+            }
+        }
+
+        //start the timer
+        timer.start();
+
+
     }
 }
