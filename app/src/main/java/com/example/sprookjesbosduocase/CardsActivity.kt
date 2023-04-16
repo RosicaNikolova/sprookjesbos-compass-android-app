@@ -11,7 +11,6 @@ import android.widget.ImageView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class CardsActivity : AppCompatActivity() {
-    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cards)
@@ -50,7 +49,7 @@ class CardsActivity : AppCompatActivity() {
             val dialogBinding = layoutInflater.inflate(R.layout.card_popup, null)
 
             val myDialog = Dialog(this)
-            //myDialog.setContentView(dialogBinding)
+            myDialog.setContentView(dialogBinding)
 
             myDialog.setCancelable(true)
             myDialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
